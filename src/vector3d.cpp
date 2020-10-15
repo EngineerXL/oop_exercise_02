@@ -71,7 +71,7 @@ Vector3D operator"" _vector3d(const char *str, size_t n) {
 		if (s[i] == ',' and j < 3) {
 			try {
 				cords[j] = std::stold(s.substr(last, i - last + 1));
-			} catch (std::invalid_argument) {
+			} catch (std::invalid_argument & ex) {
 				;
 			}
 			last = i + 1;
